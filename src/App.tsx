@@ -6,16 +6,22 @@ import './styles/main.scss';
 function App() {
   return (
     <Router>
-      <nav>
-        <ul>
-          <li><Link to="/">Abrir Chamado</Link></li>
-          <li><Link to="/admin">Admin</Link></li>
-        </ul>
-      </nav>
-      <Routes>
-        <Route path="/" element={<FormChamado />} />
-        <Route path="/admin" element={<Admin />} />
-      </Routes>
+      <header>
+        <nav>
+          <h1>EletroSolar</h1>
+          <ul>
+            <li><Link to="/">Abrir Chamado</Link></li>
+            <li><Link to="/admin">Admin</Link></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <Routes>
+          <Route path="/" element={<FormChamado />} />
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+      </main>
     </Router>
   );
 }
