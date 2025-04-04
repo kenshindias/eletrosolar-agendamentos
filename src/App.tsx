@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // opcional: separa o import do Link se usado
 import FormChamado from './components/FormChamado';
 import Admin from './pages/Admin';
 import './styles/main.scss';
