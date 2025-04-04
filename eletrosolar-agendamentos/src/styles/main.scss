@@ -1,0 +1,208 @@
+:root {
+  --primary-color: #1e90ff;
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --heading-color: #111;
+  --card-bg: #ffffff;
+
+  --status-pendente: #fff8e1;
+  --status-agendado: #e3f2fd;
+  --status-concluido: #e8f5e9;
+}
+
+.dark {
+  --primary-color: #00bfff;
+  --background-color: #121212;
+  --text-color: #f0f0f0;
+  --heading-color: #ffffff;
+  --card-bg: #1e1e1e;
+  --status-pendente: #4a3b00;
+  --status-agendado: #002f5f;
+  --status-concluido: #0e3d19;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app-container, .admin-container {
+  width: 100%;
+  max-width: 900px;
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+
+  a {
+    color: var(--primary-color);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+  }
+
+  a:hover {
+    background-color: rgba(30, 144, 255, 0.1);
+  }
+}
+
+.form-chamado {
+  h2 {
+    margin-bottom: 1rem;
+    color: var(--heading-color);
+    font-size: 1.5rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  input,
+  textarea {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: white;
+    color: var(--text-color);
+  }
+
+  button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #006fd6;
+  }
+
+  .sucesso {
+    background-color: #d4edda;
+    padding: 1rem;
+    border-radius: 6px;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+}
+
+.lista-chamados {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chamado-item {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1.2rem;
+  background-color: var(--card-bg);
+  transition: box-shadow 0.2s;
+  color: var(--text-color);
+
+  &:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  p {
+    margin: 0.5rem 0;
+  }
+
+  p strong {
+    display: inline-block;
+    min-width: 90px;
+  }
+
+  p:last-of-type {
+    font-weight: bold;
+  }
+
+  &.pendente {
+    border-left: 5px solid #ff9800;
+    background-color: var(--status-pendente);
+  }
+
+  &.agendado {
+    border-left: 5px solid #2196f3;
+    background-color: var(--status-agendado);
+  }
+
+  &.concluido {
+    border-left: 5px solid #4caf50;
+    background-color: var(--status-concluido);
+  }
+}
+
+.botoes {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+
+  button {
+    flex: 1;
+    padding: 0.6rem;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #006fd6;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .botoes {
+    flex-direction: column;
+  }
+
+  header nav a {
+    display: block;
+    margin: 10px auto;
+  }
+
+  .app-container, .admin-container {
+    padding: 1.5rem 1rem;
+  }
+}
